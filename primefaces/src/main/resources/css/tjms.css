@@ -34,3 +34,14 @@ h1 {
 	margin: 0px;
 	margin-bottom: 10px
 }
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}

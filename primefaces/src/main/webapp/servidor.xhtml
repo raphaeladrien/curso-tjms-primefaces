@@ -26,7 +26,8 @@
                 </h:selectOneMenu>
 
                 <h:outputLabel />
-                <h:commandButton value="Salvar" />
+                <h:commandButton value="Gravar" actionListener="${servidorBean.gravar}"/>
+                <h:commandLink action="${servidorBean.ajudar}" value="Ajuda"/>
             </h:panelGrid>
 
         </h:form>

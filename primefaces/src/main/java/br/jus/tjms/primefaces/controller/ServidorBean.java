@@ -18,6 +18,18 @@ public class ServidorBean {
         this.servidor = new Servidor();
     }
 
+    public void gravar() {
+        System.out.println(servidor.getTipoServidor());
+    }
+
+    public String ajudar() {
+        return "ajuda-servidor";
+    }
+
+    public String servidor() {
+        return "servidor";
+    }
+
     public Servidor getServidor() {
         return servidor;
     }
