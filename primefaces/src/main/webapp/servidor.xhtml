@@ -1,13 +1,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-    <title>Olá JSF</title>
+    <title>Cadastro de servidor</title>
+    <h:outputStylesheet library="css" name="tjms.css" />
 </h:head>
 
 <h:body>
-    <h5>TJMS</h5>
-    <p:spinner />
+    <div id="main">
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="CPF: " for="cpf" />
+                <h:inputText id="cpf" value="${servidorBean.numero}"/>
+
+                <h:outputLabel value="Nome: " for="nome" />
+                <h:inputText id="nome" />
+
+                <h:outputLabel value="Tipo servidor" for="tipo" />
+                <h:selectOneMenu id="tipo">
+                    <f:selectItem itemLabel="Selecione..." />
+                    <f:selectItem itemLabel="Concursado" itemValue="concursado" />
+                    <f:selectItem itemLabel="Membro" itemValue="membro" />
+                    <f:selectItem itemLabel="Terceirizado" itemValue="terceirizado" />
+                </h:selectOneMenu>
+
+                <h:outputLabel />
+                <h:commandButton value="Salvar" />
+            </h:panelGrid>
+
+        </h:form>
+    </div>
+
+    <footer>
+        TJMS - Todos os direitos reservados
+    </footer>
+
 </h:body>
 </html>

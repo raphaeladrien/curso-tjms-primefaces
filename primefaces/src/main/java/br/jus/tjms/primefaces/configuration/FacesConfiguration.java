@@ -25,7 +25,6 @@ public class FacesConfiguration {
         return servletContext -> {
             servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
             servletContext.setInitParameter("javax.faces.FACELETS_REFRESH_PERIOD", "0");
-            servletContext.setInitParameter("primefaces.THEME", "vela");
         };
     }
 
