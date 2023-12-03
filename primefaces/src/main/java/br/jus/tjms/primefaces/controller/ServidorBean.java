@@ -1,5 +1,7 @@
 package br.jus.tjms.primefaces.controller;
 
+import br.jus.tjms.primefaces.entidade.Servidor;
+import br.jus.tjms.primefaces.entidade.TipoServidor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
@@ -7,16 +9,20 @@ import org.springframework.web.context.annotation.SessionScope;
 import javax.faces.bean.ViewScoped;
 
 @Component
-@RequestScope
+@ViewScoped
 public class ServidorBean {
 
-    private static Integer NUMERO = 0;
+    private Servidor servidor;
 
     public ServidorBean() {
-        NUMERO++;
+        this.servidor = new Servidor();
     }
 
-    public Integer getNumero() {
-        return NUMERO;
+    public Servidor getServidor() {
+        return servidor;
+    }
+
+    public TipoServidor[] getTiposServidor() {
+        return TipoServidor.values();
     }
 }

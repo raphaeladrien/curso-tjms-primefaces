@@ -12,17 +12,17 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:outputLabel value="CPF: " for="cpf" />
-                <h:inputText id="cpf" value="${servidorBean.numero}"/>
+                <h:inputText id="cpf" value="${servidorBean.servidor.cpf}"/>
 
                 <h:outputLabel value="Nome: " for="nome" />
-                <h:inputText id="nome" />
+                <h:inputText id="nome" value="${servidorBean.servidor.nome}"/>
 
                 <h:outputLabel value="Tipo servidor" for="tipo" />
-                <h:selectOneMenu id="tipo">
+                <h:selectOneMenu id="tipo" value="${servidorBean.servidor.tipoServidor}">
                     <f:selectItem itemLabel="Selecione..." />
-                    <f:selectItem itemLabel="Concursado" itemValue="concursado" />
-                    <f:selectItem itemLabel="Membro" itemValue="membro" />
-                    <f:selectItem itemLabel="Terceirizado" itemValue="terceirizado" />
+                    <f:selectItems value="${servidorBean.tiposServidor}"
+                    var="tipoServidor" itemLabel="${tipoServidor.descricao}"
+                                   itemValue="${tipoServidor}" />
                 </h:selectOneMenu>
 
                 <h:outputLabel />
