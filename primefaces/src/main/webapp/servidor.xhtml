@@ -12,7 +12,12 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:outputLabel value="CPF: " for="cpf" />
-                <h:inputText id="cpf" value="${servidorBean.servidor.cpf}"/>
+                <h:panelGroup>
+                <h:inputText id="cpf" value="${servidorBean.servidor.cpf}" label="CPF" required="true">
+                    <f:validateLength minimum="11" maximum="11" />
+                </h:inputText>
+                    <h:message for="cpf" />
+                </h:panelGroup>
 
                 <h:outputLabel value="Nome: " for="nome" />
                 <h:inputText id="nome" value="${servidorBean.servidor.nome}"/>
@@ -25,6 +30,24 @@
                                    itemValue="${tipoServidor}" />
                 </h:selectOneMenu>
 
+                <h:outputLabel value="Salário" for="salario" />
+                <h:panelGroup>
+                <h:inputText id="salario" value="${servidorBean.servidor.salario}" label="Salário">
+                    <f:convertNumber pattern="#,##0.00"/>
+                    <f:validateDoubleRange minimum="0" />
+                </h:inputText>
+                    <h:message for="salario" />
+                </h:panelGroup>
+
+                <h:outputLabel value="Data aprovação" for="dataAprovacao" />
+                <h:panelGroup>
+                    <h:inputText id="dataAprovacao" value="${servidorBean.servidor.dataAprovacao}"
+                    label="Data Fundação">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </h:inputText>
+                    <h:message for="dataAprovacao" />
+                </h:panelGroup>
+                
                 <h:outputLabel />
                 <h:commandButton value="Gravar" actionListener="${servidorBean.gravar}"/>
                 <h:commandLink action="${servidorBean.ajudar}" value="Ajuda"/>
