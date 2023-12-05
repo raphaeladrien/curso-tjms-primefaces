@@ -1,5 +1,7 @@
 package br.jus.tjms.primefaces.entidade;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -16,6 +18,7 @@ public class Servidor {
     @Id
     @GeneratedValue
     private UUID id;
+    @CPF
     private String cpf;
     private String nome;
     @Enumerated
